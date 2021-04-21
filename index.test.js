@@ -19,8 +19,20 @@ describe('[Exercise 1] trimProperties', () => {
 })
 
 describe('[Exercise 2] trimPropertiesMutation', () => {
-  test.todo('[3] returns an object with the properties trimmed')
-  test.todo('[4] the object returned is the exact same one we passed in')
+  let input;
+  let expected;
+  let actual;
+  beforeEach(() => {
+    input = { foo: '  foo ', bar: 'bar ', baz: ' baz' }
+    expected = { foo: 'foo', bar: 'bar', baz: 'baz' }
+    actual = utils.trimPropertiesMutation(input)
+  })
+  test('[3] returns an object with the properties trimmed', () => {
+    expect(actual).toEqual(expected)
+  })
+  test('[4] the object returned is the exact same one we passed in', () => {
+    expect(input).toEqual(actual)
+  })
 })
 
 describe('[Exercise 3] findLargestInteger', () => {
