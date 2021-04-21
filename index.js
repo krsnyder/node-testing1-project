@@ -7,14 +7,6 @@ function trimProperties(obj) {
   return newObj
 }
 
-/**
- * [Exercise 2] trimPropertiesMutation trims in place the properties of an object
- * @param {object} obj - an object with properties that are strings
- * @returns {object} - the same object with strings trimmed
- *
- * EXAMPLE
- * trimPropertiesMutation({ name: '  jane  ' }) // returns the object mutated in place { name: 'jane' }
- */
 function trimPropertiesMutation(obj) {
   let keys = Object.keys(obj);
   keys.forEach(key => {
@@ -23,16 +15,11 @@ function trimPropertiesMutation(obj) {
   return obj
 }
 
-/**
- * [Exercise 3] findLargestInteger finds the largest integer in an array of objects { integer: 1 }
- * @param {object[]} integers - an array of objects
- * @returns {number} - the largest integer
- *
- * EXAMPLE
- * findLargestInteger([{ integer: 1 }, { integer: 3 }, { integer: 2 }]) // returns 3
- */
 function findLargestInteger(integers) {
-  // ✨ implement
+  const arr = integers.map(k => {
+    return Object.values(k)[0]
+  })
+  return Math.max(...arr);
 }
 
 class Counter {
