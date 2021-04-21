@@ -27,19 +27,6 @@ class Counter {
   constructor(initialNumber) {
     this.count = initialNumber + 1;
   }
-
-  /**
-   * [Exercise 4B] Counter.prototype.countDown counts down to zero
-   * @returns {number} - the next count, does not go below zero
-   *
-   * EXAMPLE
-   * const counter = new Counter(3)
-   * counter.countDown() // returns 3
-   * counter.countDown() // returns 2
-   * counter.countDown() // returns 1
-   * counter.countDown() // returns 0
-   * counter.countDown() // returns 0
-   */
   countDown() {
     if (this.count > 0) { 
       this.count--;
@@ -51,27 +38,21 @@ class Counter {
 }
 
 class Seasons {
-  /**
-   * [Exercise 5A] Seasons creates a seasons object
-   */
   constructor() {
-    // ✨ initialize whatever properties are needed
+    this.season = '';
   }
 
-  /**
-   * [Exercise 5B] Seasons.prototype.next returns the next season
-   * @returns {string} - the next season starting with "summer"
-   *
-   * EXAMPLE
-   * const seasons = new Seasons()
-   * seasons.next() // returns "summer"
-   * seasons.next() // returns "fall"
-   * seasons.next() // returns "winter"
-   * seasons.next() // returns "spring"
-   * seasons.next() // returns "summer"
-   */
   next() {
-    // ✨ implement
+    if (this.season === '' || this.season === 'spring') {
+      this.season = 'summer';
+    } else if (this.season === 'summer') {
+      this.season = 'fall';
+    } else if (this.season === 'fall') {
+      this.season = 'winter';
+    } else {
+      this.season = 'spring';
+    }
+    return this.season
   }
 }
 
